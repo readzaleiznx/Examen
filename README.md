@@ -60,7 +60,7 @@
 > Este proyecto **no está afiliado, respaldado ni asociado de ninguna manera** con `WhatsApp`. `WhatsApp` es una marca registrada de `WhatsApp LLC`, una subsidiaria de `Meta Platforms, Inc.`. Este bot es un **desarrollo independiente** y **no tiene ninguna relación oficial con la compañía**.
 
 > [!IMPORTANT]\
-> **No** se asegura que este **proyecto siga funcionando al 100% debido** a cuestiones de tiempo personales de [Bruno Sobrino](https://github.com/BrunoSobrino), por lo cual **el proyecto esta en manos de colaboradores** y usuarios que deseen aportar actualizaciones.
+> **No** se asegura que este **proyecto siga funcionando al 100% debido** a cuestiones de tiempo personales de [Aleizn](https://github.com/BrunoSobrino), por lo cual **el proyecto esta en manos de colaboradores** y usuarios que deseen aportar actualizaciones.
 
 
 # Opciones de despliegue
@@ -154,7 +154,7 @@ En este espacio podrás encontrar diversas **comunidades de ayuda** donde podrá
 
 | RRSS | Tipo | Idioma | Enlace |
 | --- | --- | --- |--- |
-| WhatsApp | Canal | Español | [¡Únete aquí!](https://whatsapp.com/channel/0029Vaein6eInlqIsCXpDs3y) |
+| WhatsApp | Canal | Español | [¡Únete aquí!](https://chat.whatsapp.com/LrRjTMeGvQqHNKbvaCVeNS) |
 | WhatsApp | Grupo | Español | [¡Únete aquí!](https://chat.whatsapp.com/Daa3Fe4A9JeFpRI2QtBS4s) |
 | WhatsApp | Group | English | [¡Join here!](https://chat.whatsapp.com/HTatrQokqODKx9eem0CKuY) |
 | WhatsApp | Grupo | Português | [¡Junte-se aqui!](https://chat.whatsapp.com/J8tFq87Ia0jEnx20NvCQxN) |

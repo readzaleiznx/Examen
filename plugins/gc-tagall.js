@@ -1,27 +1,54 @@
+const handler = async (m, { isOwner, isAdmin, conn, text, participants, args }) => {
+  let chat = global.db.data.chats[m.chat];
 
-
-const handler = async (m, {isOwner, isAdmin, conn, text, participants, args, command, usedPrefix}) => {
-  const idioma = global.db.data.users[m.sender].language || 'es';
-  const _translate = global.translate[idioma];
-  const tradutor = _translate.plugins.gc_tagall;
-
-  if (usedPrefix == 'a' || usedPrefix == 'A') return;
   if (!(isAdmin || isOwner)) {
     global.dfail('admin', m, conn);
     throw false;
   }
+
+  const emoji = global.db.data.chats[m.chat]?.emojiTag || '🏁';
+  const countryFlags = {
+    '52': '🇲🇽', '57': '🇨🇴', '54': '🇦🇷', '34': '🇪🇸', '55': '🇧🇷',
+    '1': '🇺🇸', '44': '🇬🇧', '91': '🇮🇳', '502': '🇬🇹', '56': '🇨🇱',
+    '51': '🇵🇪', '58': '🇻🇪', '505': '🇳🇮', '593': '🇪🇨', '504': '🇭🇳',
+    '591': '🇧🇴', '53': '🇨🇺', '503': '🇸🇻', '507': '🇵🇦', '595': '🇵🇾'
+  };
+
+    const getCountryFlag = (id) => {
+    const phoneNumber = id.split('@')[0];
+    const prefixes = [3, 2, 1];
+
+    for (const length of prefixes) {
+      const phonePrefix = phoneNumber.slice(0, length);
+      if (countryFlags[phonePrefix]) return countryFlags[phonePrefix];
+    }
+
+    return '🏁';
+  };
+
   const pesan = args.join` `;
-  const oi = `${tradutor.texto1[0]} ${pesan}`;
-  let teks = `${tradutor.texto1[1]}  ${oi}\n\n${tradutor.texto1[2]}\n`;
+  const groupMetadata = await conn.groupMetadata(m.chat);
+  const groupName = groupMetadata.subject;
+  let teks = `*${groupName}*\n\nhttps://chat.whatsapp.com/LSFhllEEKW8HAP7eGwQpiX\n`;
+  teks += `𝙈𝙞𝙚𝙢𝙗𝙧𝙤𝙨: *${participants.length}*\n`;
+  teks += `${pesan}\n┌──⭓ 𝙇𝙞𝙨𝙩𝙖\n`;
+
   for (const mem of participants) {
-    teks += `┣➥ @${mem.id.split('@')[0]}\n`;
+    const flagOrEmoji = emoji === '🏁' ? getCountryFlag(mem.id) : emoji;
+    teks += `${flagOrEmoji} @${mem.id.split('@')[0]}\n`;
   }
-  teks += `*└* 𝐁𝐲 𝐓𝐡𝐞 𝐌𝐲𝐬𝐭𝐢𝐜 - 𝐁𝐨𝐭\n\n*▌│█║▌║▌║║▌║▌║▌║█*`;
-  conn.sendMessage(m.chat, {text: teks, mentions: participants.map((a) => a.id)} );
+
+  teks += `└───────⭓\n\n> AleiznVentas`;
+  await conn.sendMessage(m.chat, { 
+    text: teks,
+    mentions: participants.map((a) => a.id)
+  });
 };
-handler.help = ['tagall <mesaje>', 'invocar <mesaje>'];
+
+handler.help = ['tagall', 'todos'];
 handler.tags = ['group'];
-handler.command = /^(tagall|invocar|invocacion|todos|invocación)$/i;
+handler.command = /^(tagall|invocar|todos|invocación)$/i;
 handler.admin = true;
 handler.group = true;
+
 export default handler;

@@ -1431,7 +1431,7 @@ Tu ganaste:
     // Notificação automatica para cada usuario Jogador do Game GLX
     if (!data1.notificacao.recebidas.includes(api.notificacao.id)) {
       const number = data1.perfil.id.replace(/\D/g, '');
-      let str = `*🔔 - Notificación del juego*\n\n*[BOT]* _The Mystic Bot MD_ \n*_Para:_ @${number}*\n\n`;
+      let str = `*🔔 - Notificación del juego*\n\n*[BOT]* _Off bot MD_ \n*_Para:_ @${number}*\n\n`;
 
       const msg = api.notificacao.msg; // Mensagem de notificação na API
 

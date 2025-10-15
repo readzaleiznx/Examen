@@ -27,12 +27,11 @@ const handler = async (m, {conn, usedPrefix}) => {
   const old = performance.now();
   const neww = performance.now();
   const rtime = (neww - old).toFixed(7);
-  const wm = 'The Mystic Bot';
+  const wm = 'Off bot';
   const info = ` ${tradutor.texto1[0]}
 
-  ${tradutor.texto1[1]} Bruno Sobrino
-  ${tradutor.texto1[2]} +5219992095479
-  ${tradutor.texto1[3]} paypal.me/BrunoSob
+  ${tradutor.texto1[1]} Aleizn
+  ${tradutor.texto1[2]} +51992621601
 
   ${tradutor.texto1[4]} ${rtime}
   ${tradutor.texto1[5]} ${uptime}
@@ -74,7 +73,7 @@ const handler = async (m, {conn, usedPrefix}) => {
         mediaUrl: 'https://github.com/BrunoSobrino/TheMystic-Bot-MD',
         mediaType: 2,
         previewType: 'pdf',
-        title: 'The Mystic - Bot',
+        title: 'Off Bot',
         body: tradutor.texto2,
         thumbnail: imagen1,
         sourceUrl: 'https://github.com/BrunoSobrino/TheMystic-Bot-MD',
